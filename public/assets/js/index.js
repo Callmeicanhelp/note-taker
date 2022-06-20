@@ -1,3 +1,10 @@
+// const { use } = require("../../../routes/api/notes");
+
+// const { randomInt } = use('node:crypto');
+// const { uuid } = require('uuidv4');
+// const app = uuid();
+
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -31,7 +38,8 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  })
+;
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -40,7 +48,8 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
-  });
+  })
+;
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -48,7 +57,8 @@ const deleteNote = (id) =>
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+  })
+;
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
@@ -66,10 +76,12 @@ const renderActiveNote = () => {
   }
 };
 
+// const randomInt = (await import('node:crypto'));
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    id: 1
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
@@ -161,7 +173,6 @@ const renderNoteList = async (notes) => {
   jsonNotes.forEach((note) => {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
-
     noteListItems.push(li);
   });
 

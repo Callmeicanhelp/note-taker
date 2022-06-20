@@ -4,11 +4,24 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "crypto-randomuuid": "^1.0.0",
+    "express": "^4.16.4",
+    "nodemon": "^2.0.16",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Callmeicanhelp/note-taker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Callmeicanhelp/note-taker/issues"
+  },
+  "homepage": "https://github.com/Callmeicanhelp/note-taker#readme"
 }
