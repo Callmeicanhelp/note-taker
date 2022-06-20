@@ -1,9 +1,7 @@
 // const { use } = require("../../../routes/api/notes");
-
 // const { randomInt } = use('node:crypto');
 // const { uuid } = require('uuidv4');
 // const app = uuid();
-
 
 let noteTitle;
 let noteText;
@@ -81,7 +79,6 @@ const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
-    id: 1
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
